@@ -1,6 +1,11 @@
 import random
 import time
 
+# 셸 정렬 알고리즘은 선택, 삽입, 버블 알고리즘에 비해 엄청나게 좋은 성능을 보여준다. 
+# 선택, 삽입, 버블 정렬 알고리즘들이 데이터 하나를 다른 데이터들과 비교하고, 필요에 따라 이동하는 방식을 기본적으로 
+# 사용하기 때문에 결국 O(N^2)의 성능에서 벗어나기 어려운 반면에, 셸 정렬 알고리즘은 하나의 데이터와 
+# 그룹간에 비교 이동을 몇 개의 단계로 나누어서 진행하므로 O(N(log2N)) 정도의 성능을 보여준다. 
+
 def shell_sort(random_list):
     h=1
     while h<len(random_list):
@@ -23,7 +28,7 @@ def shell_sort(random_list):
 
                 random_list[insert_index] = temp
                 start_index = insert_index + h
-                
+
         h=h//3
 
 if __name__=='__main__':
